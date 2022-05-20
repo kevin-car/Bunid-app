@@ -11,7 +11,7 @@ console.log("photo",props.photo)
             <div className='fenetreModale pagination justify-content-center'>
                 <div className="toast show w-50 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
                     <div className="toast-header">
-                        <strong className="me-auto">{props.titre}<br/> Auteur(e)(s) : 
+                        <strong className="me-auto"> <span className='border'>{props.titre}</span> <br/> Auteur(e)(s) : 
                         {/* Affichage conditionnel s'il n'y a pas d'auteur, 1 auteur ou 2 auteurs  */}
                         {
                             props.auteur1 != "" && 

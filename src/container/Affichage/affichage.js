@@ -34,7 +34,7 @@ class Affichage extends React.Component {
                 this.setState({vendabilite : false})
             }
 
-            if(this.state.vendabilite){
+            if(data.saleInfo.saleability == "FOR_SALE"){
                 this.setState({prix : data.saleInfo.retailPrice.amount})
             }
 
@@ -48,9 +48,8 @@ class Affichage extends React.Component {
 
             this.setState({displayThisModal : true})
             console.log( this.state.prix)
-            /* Desactiver l'affichage de la fenetre des livres */
         })
-
+        
     }
     
     fermerModal = () => {
@@ -64,9 +63,9 @@ class Affichage extends React.Component {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Description de l'ouvrage</th>
-                    <th scope="col">Lien</th>
+                    <th scope="col-5">Titre</th>
+                    <th scope="col-5">Sous-Titre</th>
+                    <th scope="col-2">Lien</th>
                     </tr>
                 </thead>
             <tbody>
@@ -74,9 +73,9 @@ class Affichage extends React.Component {
                 let lien = data.selfLink
                 return(
                     <tr key={index} className="table-danger">
-                        <th scope="row">{data.volumeInfo.title}</th>
-                        <td>{data.volumeInfo.description}</td>
-                        <td> 
+                        <th scope="row col-5">{data.volumeInfo.title}</th>
+                        <td scope="row col-5">{data.volumeInfo.subtitle}</td>
+                        <td scope="row col-5"> 
                             <button class="btn btn-primary" onClick={ () => this.displayModal(lien)} >Détails</button> 
                         </td>
                     </tr>
