@@ -8,7 +8,6 @@ class Pagination extends Component {
             pageNumbers.push(i)
         }
 
-        console.log(pageNumbers)
         
         return (
                 <ul className='pagination justify-content-center'>

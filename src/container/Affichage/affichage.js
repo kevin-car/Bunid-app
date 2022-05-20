@@ -42,7 +42,7 @@ class Affichage extends React.Component {
                 this.setState({lienAchat : data.saleInfo.buyLink})
             }
 
-            if(data.volumeInfo.imageLinks.smallThumbnail){
+            if(data.volumeInfo.imageLinks != undefined){
                 this.setState({photo : data.volumeInfo.imageLinks.smallThumbnail})
             }
 
@@ -57,7 +57,6 @@ class Affichage extends React.Component {
     }
 
     render(){
-        console.log(this.state.titre)
         return(
         <div className='fenetreAffichage'>
             <table className="table table-hover">
@@ -76,7 +75,7 @@ class Affichage extends React.Component {
                         <th scope="row col-5">{data.volumeInfo.title}</th>
                         <td scope="row col-5">{data.volumeInfo.subtitle}</td>
                         <td scope="row col-5"> 
-                            <button class="btn btn-primary" onClick={ () => this.displayModal(lien)} >Détails</button> 
+                            <button className="btn btn-primary" onClick={ () => this.displayModal(lien)} >Détails</button> 
                         </td>
                     </tr>
                 )

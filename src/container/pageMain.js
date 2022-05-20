@@ -49,7 +49,6 @@ class PageMain extends React.Component {
         const indexofFirstPost = indexofLastPost - this.state.postperpage
 
         const currentPosts = this.state.resultat.items.slice(indexofFirstPost, indexofLastPost)
-        console.log(this.state.resultat.items)
        
         return(
                 <>
@@ -72,8 +71,8 @@ class PageMain extends React.Component {
                     {
                         
                     }
-                    {this.state.resultat.items.length >= 2 && <p class="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultats</p>}
-                    {this.state.resultat.items.length == 1 && <p class="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultat</p>}
+                    {this.state.resultat.items.length >= 2 && <p className="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultats</p>}
+                    {this.state.resultat.items.length == 1 && <p className="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultat</p>}
                     
 
                 </>
