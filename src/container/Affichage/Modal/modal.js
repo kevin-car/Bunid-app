@@ -1,0 +1,53 @@
+import React, { Component } from 'react';
+import './modal.css'
+import noImage from "../../../image/noimage.svg.png"
+
+
+const Modal = (props) => {
+
+console.log(props.lienAchat)
+console.log("photo",props.photo)
+        return (
+            <div className='fenetreModale pagination justify-content-center'>
+                <div className="toast show w-50 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div className="toast-header">
+                        <strong className="me-auto">{props.titre}<br/> Auteur(e)(s) : 
+                        {/* Affichage conditionnel s'il n'y a pas d'auteur, 1 auteur ou 2 auteurs  */}
+                        {
+                            props.auteur1 != "" && 
+                            <div> {props.auteur1} </div>
+                        }
+                        {
+                            props.auteur2 != "" && 
+                            <div> {props.auteur2} </div>
+                        }
+                        </strong>
+                        {/* Affichage du prix s'il est dispo, ou d'un message s'il n'est pas disponible */}
+                        {props.vendabilite ? <small>{props.prix}€</small> : <small>Le produit n'est pas disponible</small> }
+                        
+                        <button type="button" className="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close" onClick={props.fermerModal} >
+                        <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                        
+
+                    <div className="toast-body">
+                    {
+                        props.photo != "" && <img src={props.photo}/>
+                    }
+                    {
+                        props.photo == "" && <img src={noImage}/>
+                    }
+
+                    </div>
+                    <div className="toast-body">
+                        {props.vendabilite ? <a href={props.lienAchat}>Acheter ce livre</a>  : <p>Aucun lien disponible</p>}
+                    </div>
+                </div>
+
+            </div>
+        );
+}
+
+export default Modal;
+
