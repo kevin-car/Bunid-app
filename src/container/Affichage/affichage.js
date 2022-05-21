@@ -15,7 +15,7 @@ class Affichage extends React.Component {
         vendabilite : null,
         prix : 0
     }
-
+    /* En fonction de ce que renvoie l'API, on alimente notre state */
     displayModal = (lien) => {
         fetch(lien)
         .then(result => { return result.json()})
@@ -32,24 +32,21 @@ class Affichage extends React.Component {
             }else{
                 this.setState({vendabilite : false})
             }
-
             if(data.saleInfo.saleability == "FOR_SALE"){
                 this.setState({prix : data.saleInfo.retailPrice.amount})
             }
-
             if(data.saleInfo.saleability == "FOR_SALE"){
                 this.setState({lienAchat : data.saleInfo.buyLink})
             }
-
             if(data.volumeInfo.imageLinks != undefined){
                 this.setState({photo : data.volumeInfo.imageLinks.smallThumbnail})
             }
-
             this.setState({displayThisModal : true})
         })
         
     }
-    
+    /* cette fonction est utilisée par la fenetre modale */
+    /* 1/ on desactive l'affichage de la modale, on remet le state en valeur par défault */
     fermerModal = () => {
         this.setState({ displayThisModal : false })
         this.setState({ titre : "" })
@@ -72,25 +69,23 @@ class Affichage extends React.Component {
                         <th scope="col-2">Lien</th>
                     </tr>
                 </thead>
-            <tbody>
-            {this.props.data && this.props.data.map((data, index)=>{
-                let lien = data.selfLink
-                return(
-                    <tr key={index} className="table-danger">
-                        <th scope="row col-5">{data.volumeInfo.title}</th>
-                        <td scope="row col-5">{data.volumeInfo.subtitle}</td>
-                        <td scope="row col-5"> 
-                            <button className="btn btn-primary" onClick={ () => this.displayModal(lien)} >Détails</button> 
-                        </td>
-                    </tr>
-                )
-                })
-            }
-
-            </tbody>
+                <tbody>
+                {this.props.data && this.props.data.map((data, index)=>{
+                    let lien = data.selfLink
+                    return(
+                        <tr key={index} className="table-danger">
+                            <th scope="row col-5">{data.volumeInfo.title}</th>
+                            <td scope="row col-5">{data.volumeInfo.subtitle}</td>
+                            <td scope="row col-5"> 
+                                <button className="btn btn-primary" onClick={ () => this.displayModal(lien)} >Détails</button> 
+                            </td>
+                        </tr>
+                    )
+                    })
+                }
+                </tbody>
             </table>
             { this.state.displayThisModal &&
-
                 <Modal
                     titre = {this.state.titre} // ok
                     auteur1 = {this.state.auteur1} // ok 

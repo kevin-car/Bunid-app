@@ -23,18 +23,19 @@ const Modal = (props) => {
                             </strong>
                             {/* Affichage du prix s'il est dispo, ou d'un message s'il n'est pas disponible à la vente*/}
                             {props.vendabilite ? <small className='text-primary'>{props.prix}€</small> : <small   className="text-info">Le produit n'est pas disponible</small> }
-                            
+                            {/* La croix qui ferme la modale */}
                             <button type="button" className="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close" onClick={props.onClose} >
                             <span aria-hidden="true"></span>
                             </button>
                         </div>
                             
-
+                        {/* Affichage de la photo si elle envoyée par l'API */}
                         <div className="toast-body">
                             { props.photo != "" && <img src={props.photo}/>}
                             { props.photo == "" && <img src={noImage}/>}
 
                         </div>
+                        {/* Si le produit est en stock, on affiche le prix, sinon on affiche un message */}
                         <div className="toast-body">
                             {props.vendabilite ? <a href={props.lienAchat} target="_blank">Acheter ce livre</a>  : <p>Aucun lien disponible</p>}
                         </div>
