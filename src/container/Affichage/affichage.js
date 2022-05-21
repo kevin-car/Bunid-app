@@ -20,7 +20,6 @@ class Affichage extends React.Component {
         fetch(lien)
         .then(result => { return result.json()})
         .then(data => {
-            console.log(data)
             this.setState({titre : data.volumeInfo.title})
             if(data.volumeInfo.authors != undefined  ){
                 this.setState({auteur1 : data.volumeInfo.authors[0]})
@@ -47,7 +46,6 @@ class Affichage extends React.Component {
             }
 
             this.setState({displayThisModal : true})
-            console.log( this.state.prix)
         })
         
     }
@@ -64,7 +62,6 @@ class Affichage extends React.Component {
     }
 
     render(){
-        console.log(this.state)
         return(
         <div className='fenetreAffichage'>
             <table className="table table-hover">

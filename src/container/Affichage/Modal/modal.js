@@ -5,7 +5,6 @@ import noImage from "../../../image/noimage.svg.png"
 
 
 const Modal = (props) => {
-console.log(props.displayThisModal)
         return (
             <Dialog open={props.openModal} onClose={props.onClose} >
                 <div className='fenetreModale pagination justify-content-center w-100 p-3'>
@@ -23,7 +22,7 @@ console.log(props.displayThisModal)
                             }
                             </strong>
                             {/* Affichage du prix s'il est dispo, ou d'un message s'il n'est pas disponible à la vente*/}
-                            {props.vendabilite ? <small className='text-primary'>{props.prix}€</small> : <small small  className="text-info">Le produit n'est pas disponible</small> }
+                            {props.vendabilite ? <small className='text-primary'>{props.prix}€</small> : <small   className="text-info">Le produit n'est pas disponible</small> }
                             
                             <button type="button" className="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close" onClick={props.onClose} >
                             <span aria-hidden="true"></span>
