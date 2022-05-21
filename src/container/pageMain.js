@@ -52,6 +52,7 @@ class PageMain extends React.Component {
        
         return(
                 <>
+                <h1 className='titrePrincipal text-center m-5 text-primary h1'> Recherche de livres </h1>
                     <div className="d-flex  pl-5 pageMain justify-content-center">
                         <input className="justify-content-center me-sm-2" type="text" placeholder="Saisir votre recherche ici"  onChange={(e) => this.handleChange(e)}/>
                         <button className="btn btn-secondary my-2 my-sm-0"  onClick={this.research}>Search</button>

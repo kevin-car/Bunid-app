@@ -2,3 +2,8 @@
     margin-bottom: 50px;
     margin-top: 50px;
 }
+
+.titrePrincipal {
+    font-size: 5rem;
+    font-weight: bolder;
+}
