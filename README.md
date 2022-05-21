@@ -1,7 +1,7 @@
 
 ## Available Scripts
 
-Bonjour, ce projet permet de réaliser des recherches de livres sur l'API de Google. 
+Bonjour, ce projet est un site qui permet de réaliser des recherches de livres sur l'API de Google. 
 
 ### `npm install`
 
