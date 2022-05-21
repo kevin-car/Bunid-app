@@ -1,3 +1,8 @@
 .fenetreModale{
     width: 100%;
+
+}
+.w-50 {
+    min-width: 400px !important;
+    max-width: 400px !important;
 }

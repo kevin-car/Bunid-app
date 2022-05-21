@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
 
-class Pagination extends Component {
-    render() {
+const Pagination = (props) => {
         const pageNumbers = []
 
-        for(let i = 1 ; i<=Math.ceil(this.props.totalPosts / this.props.postsPerPage); i++){
+        for(let i = 1 ; i<=Math.ceil(props.totalPosts / props.postsPerPage); i++){
             pageNumbers.push(i)
         }
 
-        
         return (
                 <ul className='pagination justify-content-center'>
                     {pageNumbers.map(number => {
                        return(
                             <li key={number} className='page-item'>
-                                <a onClick={()=> this.props.paginate(number)} href="!#" className='page-link'>{number}</a>
+                                <a onClick={()=> props.paginate(number)} href="!#" className='page-link'>{number}</a>
                             </li>
                        )
                     })}
-                </ul>
-                
+                </ul>         
         );
-    }
+    
 }
-
-
 export default Pagination;
+

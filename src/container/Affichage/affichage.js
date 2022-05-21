@@ -57,6 +57,7 @@ class Affichage extends React.Component {
     }
 
     render(){
+        console.log(this.state)
         return(
         <div className='fenetreAffichage'>
             <table className="table table-hover">
@@ -94,7 +95,8 @@ class Affichage extends React.Component {
                     prix = {this.state.prix} // ok
                     photo = {this.state.photo}
                     lienAchat = {this.state.lienAchat} 
-                    fermerModal = {this.fermerModal}
+                    onClose = {()=>this.fermerModal()}
+                    openModal = {this.state.displayThisModal}
                 />
 
             }

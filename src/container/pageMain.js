@@ -7,8 +7,7 @@ class PageMain extends React.Component {
 
     state = {
         resultat : {
-                items : [
-                ]
+                items : []
         },
 
         recherche : "", 
