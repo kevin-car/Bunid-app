@@ -39,7 +39,7 @@ const Modal = (props) => {
 
                     </div>
                     <div className="toast-body">
-                        {props.vendabilite ? <a href={props.lienAchat}>Acheter ce livre</a>  : <p>Aucun lien disponible</p>}
+                        {props.vendabilite ? <a href={props.lienAchat} target="_blank">Acheter ce livre</a>  : <p>Aucun lien disponible</p>}
                     </div>
                 </div>
 

@@ -62,9 +62,9 @@ class Affichage extends React.Component {
             <table className="table table-hover">
                 <thead>
                     <tr>
-                    <th scope="col-5">Titre</th>
-                    <th scope="col-5">Sous-Titre</th>
-                    <th scope="col-2">Lien</th>
+                        <th scope="col-5">Titre</th>
+                        <th scope="col-5">Sous-Titre</th>
+                        <th scope="col-2">Lien</th>
                     </tr>
                 </thead>
             <tbody>
