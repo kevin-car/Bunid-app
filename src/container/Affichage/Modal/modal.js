@@ -23,7 +23,7 @@ console.log(props.displayThisModal)
                             }
                             </strong>
                             {/* Affichage du prix s'il est dispo, ou d'un message s'il n'est pas disponible à la vente*/}
-                            {props.vendabilite ? <small className='text-success'>{props.prix}€</small> : <small small  className="text-success">Le produit n'est pas disponible</small> }
+                            {props.vendabilite ? <small className='text-primary'>{props.prix}€</small> : <small small  className="text-info">Le produit n'est pas disponible</small> }
                             
                             <button type="button" className="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close" onClick={props.onClose} >
                             <span aria-hidden="true"></span>
@@ -32,8 +32,8 @@ console.log(props.displayThisModal)
                             
 
                         <div className="toast-body">
-                        { props.photo != "" && <img src={props.photo}/>}
-                        { props.photo == "" && <img src={noImage}/>}
+                            { props.photo != "" && <img src={props.photo}/>}
+                            { props.photo == "" && <img src={noImage}/>}
 
                         </div>
                         <div className="toast-body">

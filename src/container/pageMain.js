@@ -37,10 +37,10 @@ class PageMain extends React.Component {
         this.setState({ recherche : e.target.value })
     }
 
-    paginate = (pageActuelle) => {
+    paginate = (pageActuelle,e) => {
+        e.preventDefault();
         this.setState({pageActuelle : pageActuelle})
     }
-
 
     render(){
         const indexofLastPost = this.state.pageActuelle * this.state.postperpage
@@ -68,18 +68,11 @@ class PageMain extends React.Component {
                             paginate = {this.paginate}
                         />
                     </div>
-                    {
-                        
-                    }
+                    {/* Affichage du nombre de résultats en bas de la pagination */}
                     {this.state.resultat.items.length >= 2 && <p className="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultats</p>}
                     {this.state.resultat.items.length == 1 && <p className="text-danger pagination justify-content-center">Vous avez eu {this.state.resultat.items.length} resultat</p>}
-                    
-
                 </>
-
         )
-
-
     }
 }
 export default PageMain

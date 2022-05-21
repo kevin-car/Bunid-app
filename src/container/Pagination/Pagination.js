@@ -1,9 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
 const Pagination = (props) => {
+        
+        const [postsPerPage, setPostsPerPage] = useState(0);
+        const [totalPosts, setTotalPosts] = useState(0);
+
+        useEffect(()=> {
+            setPostsPerPage(props.postsPerPage)
+            setTotalPosts(props.totalPosts)
+        })
+
+
+
         const pageNumbers = []
 
-        for(let i = 1 ; i<=Math.ceil(props.totalPosts / props.postsPerPage); i++){
+        for(let i = 1 ; i<=Math.ceil(totalPosts / postsPerPage); i++){
             pageNumbers.push(i)
         }
 
@@ -12,13 +23,12 @@ const Pagination = (props) => {
                     {pageNumbers.map(number => {
                        return(
                             <li key={number} className='page-item'>
-                                <a onClick={()=> props.paginate(number)} href="!#" className='page-link'>{number}</a>
+                                <a onClick={(e)=> props.paginate(number,e)} href="!#" className='page-link'>{number}</a>
                             </li>
                        )
                     })}
-                </ul>         
+                </ul>
         );
-    
 }
 export default Pagination;
 

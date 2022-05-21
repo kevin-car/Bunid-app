@@ -7,7 +7,7 @@ class Affichage extends React.Component {
     state = {
         displayThisModal : false,
         
-        titre : "titre du livre", 
+        titre : "", 
         auteur1 : "", 
         auteur2 : "", 
         photo : "", 
@@ -54,6 +54,13 @@ class Affichage extends React.Component {
     
     fermerModal = () => {
         this.setState({ displayThisModal : false })
+        this.setState({ titre : "" })
+        this.setState({ auteur1 : "" })
+        this.setState({ auteur2 : "" })
+        this.setState({ photo : "" })
+        this.setState({ lienAchat : "" })
+        this.setState({ vendabilite : null })
+        this.setState({ prix : 0 })
     }
 
     render(){
